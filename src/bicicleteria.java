@@ -6,18 +6,18 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Punto Digital
  */
 public class bicicleteria {
-    ArrayList <Bicicleta> bicicletas;
+
+    ArrayList<Bicicleta> bicicletas;
     float ganancias;
     int cantidaddeventas;
 
     public bicicleteria() {
-      bicicletas= new ArrayList<>();
+        bicicletas = new ArrayList<>();
     }
 
     public ArrayList<Bicicleta> getBicicletas() {
@@ -43,22 +43,30 @@ public class bicicleteria {
     public void setCantidaddeventas(int cantidaddeventas) {
         this.cantidaddeventas = cantidaddeventas;
     }
-     
-    void addBicicleta(Bicicleta nuevaBici){
-    bicicletas.add(nuevaBici);
+
+    void addBicicleta(Bicicleta nuevaBici) {
+        bicicletas.add(nuevaBici);
     }
-    void VenderBicicleta(Bicicleta bicicleta){
-      cantidaddeventas++;
-      ganancias=ganancias+bicicleta.getPrecio();
-      bicicletas.remove(bicicleta);
-      
+
+    void VenderBicicleta(Bicicleta bicicleta) {
+        cantidaddeventas++;
+        ganancias = ganancias + bicicleta.getPrecio();
+        bicicletas.remove(bicicleta);
+
     }
+
+    public Bicicleta buscarBicicleta(String nroDeSerie) {
+        for (int i = 0; i < bicicletas.size(); i++) {
+
+            if (nroDeSerie.equals(bicicletas.get(i).getNroDeSerie())) {
+                return bicicletas.get(i);
+            }
+
+        }
+     return null;
     }
-    
-    
-   
-    
-    
-    
-   
+}
+
+
+  
 
